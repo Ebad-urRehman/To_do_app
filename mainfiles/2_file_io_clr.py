@@ -8,20 +8,20 @@ while True:
     match user_action:
         case 'add':
             todo = input("Enter a todo Task : ") + "\n"
-            file = open("../todo.txt", "r")
+            file = open("todo.txt", "r")
             todos = file.readlines()
             # inputting old todos in todos var in memory
             file.close()
             todos.append(todo)
             # adding new todos to it
-            file = open("../todo.txt", "w")
+            file = open("todo.txt", "w")
             # opening in write mode
             file.writelines(todos)
             # withing the file with all todos new and old
             # above line take list as an argument
             file.close()
         case 'show' | 'display':  # bitwise or operator
-            file = open("../todo.txt", "r")
+            file = open("todo.txt", "r")
             todos = file.readlines()
             # types of todos here is lists
             # new_todos = []

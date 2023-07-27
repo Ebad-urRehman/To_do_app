@@ -6,17 +6,17 @@ while True:
     match user_action:
         case 'add':
             todo = input("Enter a todo Task : ") + "\n"
-            with open("../todo.txt", "r") as file:
+            with open("todo.txt", "r") as file:
                 todos = file.readlines()
 
             todos.append(todo)
             # by using with open method we can create an object easily by syntax while opening file and there is not
             # a need to close the file
-            with open("../todo.txt", "w") as file:
+            with open("todo.txt", "w") as file:
                 file.writelines(todos)
 
         case 'show' | 'display':  # bitwise or operator
-            with open("../todo.txt", "r") as file:
+            with open("todo.txt", "r") as file:
                 todos = file.readlines()
             for index, items in enumerate(todos):
                 items = items.strip("\n")
@@ -27,7 +27,7 @@ while True:
             edited_todo = input(f"Replace {todos[number]} with : ")
             todos[number] = edited_todo + '\n'
             print(f"Replaced with {edited_todo}")
-            with open("../todo.txt", "w") as file:
+            with open("todo.txt", "w") as file:
                 file.writelines(todos)
             # print(todos)
         case 'complete':
@@ -35,7 +35,7 @@ while True:
             number = number - 1
             print(f"The Task {todos[number]} is completed :)")
             todos.pop(number)
-            with open("../todo.txt", "w") as file:
+            with open("todo.txt", "w") as file:
                 file.writelines(todos)
         case 'exit':
             break

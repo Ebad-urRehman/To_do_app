@@ -5,15 +5,17 @@
 # pip always execute in terminal not in console
 # Window is type in GUI just like string and lists
 # python does not have Window datatype by default we import it by 3rd party libraries such as PySimpleGUI
-from mainfiles import function
 # Window("title of window", layout)
 import PySimpleGUI as sg
-
+from mainfiles import function
 label = sg.Text("Write a new todo")
 input_box = sg.InputText(tooltip="Enter todo")
 add_button = sg.Button("Add")
-window = sg.Window("MY To Do App", layout = [[label], [input_box, add_button]])
+window = sg.Window("MY To Do App",
+                   layout = [[label], [input_box, add_button]],
+                   font=('Helvetica', 13))
 # list of instances of textbox
+# these lists can only except widgets(buttons, textbox, inputbox) not strings or integers etc
 # items in one square bracket means all the items in a row
 # items in multiple square bracket means all the items are in multiple rows
 window.read()
