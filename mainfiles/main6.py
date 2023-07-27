@@ -3,7 +3,7 @@
 # it is necessary to have both main file and script in same directory
 # another method is import the script file and called function as function.funcname()
 # choose one of above method depending on no of functions
-from modules import function
+from mainfiles import function
 
 while True:
     user_action = input("Type add, show, edit, complete or exit : ")

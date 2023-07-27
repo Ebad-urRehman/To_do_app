@@ -1,4 +1,4 @@
-from modules import function
+from mainfiles import function
 import time
 while True:
     datenow = time.strftime("%d-%m-%Y")
