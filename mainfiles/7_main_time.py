@@ -1,5 +1,10 @@
-from mainfiles import function
+import function
 import time
+import os
+
+if not os.path.exists("todo.txt"):
+    with open("todo.txt", "w") as file:
+        pass
 while True:
     datenow = time.strftime("%d-%m-%Y")
     timenow = time.strftime("%I:%M:%S")
